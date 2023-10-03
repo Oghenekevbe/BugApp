@@ -7,10 +7,14 @@
         <div class="row">
             <div class="col">
                 <div>
-                    <h5>List Of Bugs In The Database</h5>
-                    <hr class=" text-danger">
                     
-                        <ul>
+                        <h5>List Of Bugs In The Database</h5>
+                   
+                    <hr class=" text-danger">
+                    <a href=" {% url "add_bug"%}" >Add a New Bug</a>
+                     
+                    
+                        <ul class="mt-3">
                             {% for bug in bugs %}
                             <li> {{bug.bug_type}} <br> <small><a href=" {% url "bug_detail" bug.pk %}" class="btn btn-primary btn-sm my-3">View Bug Detail</a>  </small></li>
                             {% endfor %}

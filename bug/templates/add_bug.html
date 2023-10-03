@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Add Bug{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <form action="" method="POST">
+
+                        <h5 >Add a New Bug</h5>
+                    <hr class=" text-danger">
+                        {% csrf_token %}    
+                        {{form.as_p}}
+
+                        <button type="submit" class="btn btn-primary">Add Bug</button>
+                    
+                    
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

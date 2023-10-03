@@ -8,6 +8,8 @@ class Bug(models.Model):
     
     STATUSES =[
             ('new', 'New'),
+            ('open', 'Open'),
+            ('critical', 'Critical'),
             ('to_do', 'To Do'),
             ('assigned', 'Assigned'),
             ('in_progress', 'In Progress'),
