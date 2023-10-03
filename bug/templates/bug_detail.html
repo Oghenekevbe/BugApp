@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Bug List{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <h5 >Bug Detail</h5>
+                    <hr class=" text-danger">
+                    <h6>{{bug.bug_type}}</h6>
+                        <ul class=" mx-3">   
+                            
+                            
+                            <li>Status: {{bug.status}}</li>
+                            <li>Description: {{bug.description}}</li>
+                            <li>Reported Date: {{bug.report_date}}</li>
+                            
+                        </ul>
+                        
+                        <a href="{% url "bug_list" %}" class="btn btn-primary">Back to Bug List</a>
+                    
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
