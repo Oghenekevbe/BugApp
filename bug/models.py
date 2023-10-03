@@ -8,6 +8,7 @@ class Bug(models.Model):
     
     STATUSES =[
             ('new', 'New'),
+            ('to_do', 'To Do'),
             ('assigned', 'Assigned'),
             ('in_progress', 'In Progress'),
             ('resolved', 'Resolved'),
@@ -21,7 +22,7 @@ class Bug(models.Model):
     description = models.TextField()
     bug_type = models.CharField(max_length=225)
     report_date = models.DateTimeField(default=datetime.now)
-    status = models.CharField(max_length=50, unique=True, choices=STATUSES)
+    status = models.CharField(max_length=50, choices=STATUSES)
 
 
     def __str__(self):
