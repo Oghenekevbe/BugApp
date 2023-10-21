@@ -20,9 +20,28 @@ class Bug(models.Model):
             ('invalid', 'Invalid'),
             ('wont_fix', "Won't Fix"),
     ]
+    BUG_TYPES = [
+    ('functional', 'Functional Issue'),
+    ('performance', 'Performance Issue'),
+    ('security', 'Security Issue'),
+    ('usability', 'Usability Issue'),
+    ('compatibility', 'Compatibility Issue'),
+    ('visual', 'Visual/Design Issue'),
+    ('other', 'Other Issue'),
+    ('database', 'Database Issue'),
+    ('network', 'Network Issue'),
+    ('crash', 'Application Crash'),
+    ('installation', 'Installation Issue'),
+    ('documentation', 'Documentation Issue'),
+    ('data_loss', 'Data Loss Issue'),
+    ('accessibility', 'Accessibility Issue'),
+    ('authentication', 'Authentication Issue'),
+    ('workflow', 'Workflow Issue'),
+]
+
 
     description = models.TextField()
-    bug_type = models.CharField(max_length=225)
+    bug_type = models.CharField(max_length=225, choices=BUG_TYPES)
     report_date = models.DateTimeField(default=datetime.now)
     status = models.CharField(max_length=50, choices=STATUSES)
 
